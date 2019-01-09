@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package furo.type;
-option go_package = "rest";
+option go_package = "github.com/veith/protos/rest;rest";
 
 import "google/api/annotations.proto";
 

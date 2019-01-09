@@ -18,7 +18,7 @@ protoc -I. \
 -I/usr/local/include \
 -I$GOPATH/src \
 -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
---gogofast_out=\
+--gogofast_out=.\
 Mgoogle/protobuf/any.proto=github.com/gogo/protobuf/types,\
 Mgoogle/protobuf/duration.proto=github.com/gogo/protobuf/types,\
 Mgoogle/protobuf/struct.proto=github.com/gogo/protobuf/types,\
@@ -28,3 +28,6 @@ plugins=grpc:./$1/ \
 --swagger_out=logtostderr=true:./doc \
 --grpc-gateway_out=logtostderr=true:./$1/ \
 ./$1.proto
+
+mv $1/github.com/veith/protos/$1/$1.pb.go $1/
+rm -rf $1/github.com
