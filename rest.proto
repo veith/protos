@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package furo.type;
+option go_package = "rest";
+
+import "google/api/annotations.proto";
+
+// IANA konforme Links /
+// List of official link rels:
+// http://www.iana.org/assignments/link-relations/link-relations.xhtml
+message Link {
+    string rel = 1;
+
+    // Set der REST Verben
+    //https://tools.ietf.org/html/rfc7231#section-4
+    enum Method {
+        PUT = 0;
+        GET = 1;
+        HEAD = 2;
+        POST = 3;
+        PATCH = 4;
+        DELETE = 5;
+        TRACE = 6;
+        OPTIONS = 7;
+    }
+    // HTTP Verb
+    Method method = 2;
+    // Absolute URI
+    string href = 3;
+    // Der mime type des Links.
+    string type = 4;
+
+}
