@@ -31,3 +31,20 @@ message Link {
     string type = 4;
 
 }
+
+
+// field error
+message FieldError {
+
+    // the field, where error appears
+    string field = 2;
+
+    // error massage
+    string message = 3;
+
+    // massage for developer
+    string developerMessage = 4;
+
+    // error code
+    string code = 1;
+}
